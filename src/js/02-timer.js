@@ -68,6 +68,7 @@ function timer(deadline) {
 
   intervalId = setInterval(() => {
     const now = new Date();
+    console.log(this.intervalId);
 
     timeDifference = calendar.selectedDates[0].getTime() - now.getTime();
 
@@ -79,7 +80,7 @@ function timer(deadline) {
   }, 1000);
 }
 function stop() {
-  clearInterval(this.intervalId);
+  clearInterval(intervalId);
 }
 
 function pad(value) {
