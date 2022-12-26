@@ -66,7 +66,7 @@ function convertMs(ms) {
 function timer(deadline) {
   let intervalId = 0;
 
-  this.intervalId = setInterval(() => {
+  intervalId = setInterval(() => {
     const now = new Date();
 
     timeDifference = calendar.selectedDates[0].getTime() - now.getTime();
