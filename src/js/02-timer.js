@@ -27,13 +27,12 @@ const options = {
 
 const calendar = flatpickr(inputDate, options);
 
-btn.addEventListener(
-  'click',
-  (func = () => {
-    timer(timeDifference);
-    btn.setAttribute('disabled', true);
-  })
-);
+btn.addEventListener('click', chengeColor);
+
+function chengeColor() {
+  timer(timeDifference);
+  btn.setAttribute('disabled', true);
+}
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time

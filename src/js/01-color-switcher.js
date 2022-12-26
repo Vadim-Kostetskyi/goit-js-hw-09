@@ -3,7 +3,7 @@ const stopButton = document.querySelector('button[data-stop]');
 const backGround = document.querySelector('body');
 let id = 0;
 
-chengeColorStarted = true;
+let chengeColorStarted = true;
 
 startButton.addEventListener('click', () => {
   if (chengeColorStarted) {
