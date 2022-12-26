@@ -3,23 +3,18 @@ const stopButton = document.querySelector('button[data-stop]');
 const backGround = document.querySelector('body');
 let id = 0;
 
-let chengeColorStarted = true;
-
 startButton.addEventListener('click', () => {
-  if (chengeColorStarted) {
-    const chengeColor = setInterval(() => {
-      const color = getRandomHexColor();
-      backGround.style.backgroundColor = color;
-      id = chengeColor;
-      console.log(chengeColorStarted);
-    }, 1000);
-    chengeColorStarted = false;
-  }
+  const chengeColor = setInterval(() => {
+    const color = getRandomHexColor();
+    backGround.style.backgroundColor = color;
+    id = chengeColor;
+  }, 1000);
+  startButton.setAttribute('disabled', true);
 });
 
 stopButton.addEventListener('click', () => {
   clearInterval(id);
-  chengeColorStarted = true;
+  startButton.removeAttribute('disabled', true);
 });
 
 function getRandomHexColor() {
