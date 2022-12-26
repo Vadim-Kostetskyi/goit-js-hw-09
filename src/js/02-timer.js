@@ -64,12 +64,13 @@ function convertMs(ms) {
 }
 
 function timer(deadline) {
-  let intervalId = null;
+  let intervalId = 0;
 
   this.intervalId = setInterval(() => {
     const now = new Date();
 
     timeDifference = calendar.selectedDates[0].getTime() - now.getTime();
+
     if (timeDifference > 0) {
       convertMs(timeDifference);
     } else {
