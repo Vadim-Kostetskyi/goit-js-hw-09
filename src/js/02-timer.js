@@ -64,7 +64,7 @@ function convertMs(ms) {
 }
 
 function timer(deadline) {
-  const intervalId = null;
+  let intervalId = null;
 
   this.intervalId = setInterval(() => {
     const now = new Date();
