@@ -14,24 +14,23 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (today - selectedDates[0] > 0) {
-      btn.setAttribute('disabled', true);
+      btn.disabled = true;
       alert('Please choose a date in the future');
       // Notiflix.Notify.warning('Memento te hominem esse');
     } else {
-      btn.removeAttribute('disabled', true);
+      btn.disabled = false;
       timeDifference = selectedDates[0].getTime() - today.getTime();
-      convertMs(timeDifference);
     }
   },
 };
 
 const calendar = flatpickr(inputDate, options);
 
-btn.addEventListener('click', chengeColor);
+btn.addEventListener('click', startTimer);
 
-function chengeColor() {
+function startTimer() {
   timer(timeDifference);
-  btn.setAttribute('disabled', true);
+  btn.disabled = true;
 }
 
 function convertMs(ms) {

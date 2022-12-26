@@ -4,17 +4,18 @@ const backGround = document.querySelector('body');
 let id = 0;
 
 startButton.addEventListener('click', () => {
-  const chengeColor = setInterval(() => {
+  id = setInterval(() => {
     const color = getRandomHexColor();
     backGround.style.backgroundColor = color;
-    id = chengeColor;
   }, 1000);
-  startButton.setAttribute('disabled', true);
+  // startButton.setAttribute('disabled', true);
+  startButton.disabled = true;
 });
 
 stopButton.addEventListener('click', () => {
   clearInterval(id);
-  startButton.removeAttribute('disabled', true);
+  // startButton.removeAttribute('disabled', true);
+  startButton.disabled = false;
 });
 
 function getRandomHexColor() {
